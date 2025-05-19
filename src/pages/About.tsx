@@ -8,28 +8,28 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 // Team member data
 const teamMembers = [
   {
-    name: "Chef John",
+    name: "Chef Alex",
     title: "Head Chef",
-    bio: "With over 15 years of experience in fine dining, Chef John brings his passion for quality ingredients and traditional cooking techniques to The Little Food Shop.",
-    initials: "CJ"
+    bio: "With over 15 years of experience in fine dining, Chef Alex brings passion for quality ingredients and traditional cooking techniques to The Little Food Shop.",
+    initials: "CA"
   },
   {
-    name: "Maria Rodriguez",
+    name: "Sam Taylor",
     title: "Operations Manager",
-    bio: "Maria ensures that everything runs smoothly, from ingredient sourcing to meal distribution. Her attention to detail guarantees consistent quality in every order.",
-    initials: "MR"
+    bio: "Sam ensures that everything runs smoothly, from ingredient sourcing to meal distribution. Their attention to detail guarantees consistent quality in every order.",
+    initials: "ST"
   },
   {
-    name: "David Chen",
+    name: "Jordan Lee",
     title: "Nutritionist",
-    bio: "David helps create balanced meals that don't just taste good but are good for you. He specializes in developing options for various dietary needs and preferences.",
-    initials: "DC"
+    bio: "Jordan helps create balanced meals that don't just taste good but are good for you. They specialize in developing options for various dietary needs and preferences.",
+    initials: "JL"
   },
   {
-    name: "Sarah Johnson",
+    name: "Robin Morgan",
     title: "Pastry Chef",
-    bio: "Sarah's delicate pastries and desserts add the perfect sweet finish to our meal offerings. Her creations combine classic techniques with innovative flavors.",
-    initials: "SJ"
+    bio: "Robin's delicate pastries and desserts add the perfect sweet finish to our meal offerings. Their creations combine classic techniques with innovative flavors.",
+    initials: "RM"
   }
 ];
 
