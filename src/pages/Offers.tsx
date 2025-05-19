@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/ui/hero-section";
@@ -8,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
-import { Discount, Percent } from "lucide-react";
+import { Tag, Percent } from "lucide-react";
 
 // Mock offer data
 const specialOffers = [
@@ -140,7 +139,7 @@ const Offers = () => {
                 <CardHeader className={`${index === 2 ? 'bg-primary text-white' : ''}`}>
                   <CardTitle className="flex items-center justify-between">
                     {tier.name} 
-                    {index === 2 && <Discount className="h-5 w-5" />}
+                    {index === 2 && <Tag className="h-5 w-5" />}
                   </CardTitle>
                   <CardDescription className={`${index === 2 ? 'text-white/80' : ''}`}>
                     {tier.pointsRequired} points required
