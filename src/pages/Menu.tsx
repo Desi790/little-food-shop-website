@@ -149,7 +149,7 @@ const Menu = () => {
       <HeroSection 
         title="Our Menu" 
         subtitle="Explore our selection of delicious, homemade meals prepared daily by our expert chefs."
-        image="https://images.unsplash.com/photo-1556761175-129418cb2dfe?q=80&w=3474&auto=format&fit=crop"
+        image="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=3000&auto=format&fit=crop"
       />
       
       <section className="py-12 px-4 md:px-6">
