@@ -38,7 +38,7 @@ const FoodCard = ({
 
   return (
     <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-      <div className="relative h-56">
+      <div className="relative h-64">
         <img 
           src={image} 
           alt={name} 
