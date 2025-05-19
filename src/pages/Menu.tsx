@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/ui/hero-section";
@@ -149,7 +148,7 @@ const Menu = () => {
       <HeroSection 
         title="Our Menu" 
         subtitle="Explore our selection of delicious, homemade meals prepared daily by our expert chefs."
-        image="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?q=80&w=3000&auto=format&fit=crop"
+        image="https://images.unsplash.com/photo-1466721591366-2d5fba72006d?q=80&w=4221&auto=format&fit=crop"
       />
       
       <section className="py-12 px-4 md:px-6">
