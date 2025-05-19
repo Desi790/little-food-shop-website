@@ -38,11 +38,11 @@ const FoodCard = ({
 
   return (
     <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-      <div className="relative overflow-hidden h-48">
+      <div className="relative h-56">
         <img 
           src={image} 
           alt={name} 
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          className="w-full h-full object-cover"
         />
         {dietary && dietary.length > 0 && (
           <div className="absolute top-2 left-2 flex flex-wrap gap-1">
