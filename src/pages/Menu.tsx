@@ -117,7 +117,7 @@ const Menu = () => {
     
     // Check dietary filters
     const matchesDietary = dietaryFilters.length === 0 || 
-                           dietaryFilters.every(filter => item.dietary?.includes(filter));
+                          dietaryFilters.every(filter => item.dietary?.includes(filter));
     
     return matchesSearch && matchesCategory && matchesDietary;
   });
@@ -152,7 +152,7 @@ const Menu = () => {
         image="https://images.unsplash.com/photo-1556761175-129418cb2dfe?q=80&w=3474&auto=format&fit=crop"
       />
       
-      <section className="section-padding">
+      <section className="py-12 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <SectionHeading 
             title="Explore Our Meals" 
