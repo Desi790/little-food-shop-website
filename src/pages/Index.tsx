@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/ui/hero-section";
@@ -138,7 +139,7 @@ const Index = () => {
       <HeroSection 
         title="Delicious, Ready-Made Meals<br />Delivered To Your Door"
         subtitle="Enjoy restaurant-quality, homestyle meals without the hassle. Order online for pickup or delivery."
-        image="/lovable-uploads/08286d93-c568-4759-b380-6f966b18e083.png"
+        image=""
         imageAlt="Delicious ready-made meals with plates of food on wooden table"
         overlayOpacity="bg-black/40"
         ctaText="Order Now"

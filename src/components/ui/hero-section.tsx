@@ -24,13 +24,15 @@ const HeroSection = ({
   hideBottomText = false
 }: HeroSectionProps) => {
   return (
-    <section className="relative h-[90vh] w-full overflow-hidden">
-      <img
-        src={image}
-        alt={imageAlt}
-        className="w-full h-full object-cover"
-      />
-      <div className={`absolute inset-0 ${overlayOpacity} flex flex-col items-center justify-center text-center text-white px-4`}>
+    <section className="relative h-[90vh] w-full overflow-hidden bg-primary/10">
+      {image && (
+        <img
+          src={image}
+          alt={imageAlt}
+          className="w-full h-full object-cover"
+        />
+      )}
+      <div className={`absolute inset-0 ${image ? overlayOpacity : ''} flex flex-col items-center justify-center text-center ${image ? 'text-white' : 'text-gray-800'} px-4`}>
         <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight animate-fade-in">
           {title.includes("<br />") ? (
             <>
