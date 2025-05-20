@@ -6,7 +6,7 @@ import ContactInfo from "@/components/contact/ContactInfo";
 import MapSection from "@/components/contact/MapSection";
 import { useAccessibility } from "@/components/accessibility/AccessibilityPanel";
 import { Button } from "@/components/ui/button";
-import { SpeakerWave } from "lucide-react";
+import { Speaker } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Contact = () => {
@@ -60,7 +60,7 @@ const Contact = () => {
                 onClick={() => announce("This page contains a contact form where you can send us a message, our contact information including phone and email, and a map showing our location.")}
                 className="flex items-center gap-2"
               >
-                <SpeakerWave size={18} />
+                <Speaker size={18} />
                 Read page description
               </Button>
             </div>

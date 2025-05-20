@@ -6,8 +6,8 @@ import {
   Type, 
   ZoomIn, 
   ZoomOut,
-  SpeakerWave,
-  SpeakerX
+  Speaker,
+  VolumeX
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Toggle } from "@/components/ui/toggle";
@@ -132,7 +132,7 @@ const AccessibilityPanel = () => {
             
             <div className="flex items-center justify-between">
               <span className="flex items-center gap-2">
-                {accessibilityState.screenReader ? <SpeakerWave size={18} /> : <SpeakerX size={18} />}
+                {accessibilityState.screenReader ? <Speaker size={18} /> : <VolumeX size={18} />}
                 Screen Reader Support
               </span>
               <Toggle
