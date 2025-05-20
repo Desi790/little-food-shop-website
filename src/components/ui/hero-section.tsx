@@ -10,6 +10,7 @@ interface HeroSectionProps {
   ctaText?: string;
   ctaLink?: string;
   overlayOpacity?: string;
+  hideBottomText?: boolean;
 }
 
 const HeroSection = ({ 
@@ -19,7 +20,8 @@ const HeroSection = ({
   imageAlt = "Hero image",
   ctaText = "Order Now", 
   ctaLink = "/order",
-  overlayOpacity = "bg-black/60" 
+  overlayOpacity = "bg-black/60",
+  hideBottomText = false
 }: HeroSectionProps) => {
   return (
     <div 
@@ -42,6 +44,15 @@ const HeroSection = ({
           </Link>
         )}
       </div>
+      
+      {!hideBottomText && (
+        <div className="absolute bottom-8 left-0 right-0 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white font-playfair animate-fade-in" 
+             style={{ textShadow: "2px 2px 8px rgba(0,0,0,0.9)" }}>
+            The Little Food Shop
+          </h2>
+        </div>
+      )}
     </div>
   );
 };

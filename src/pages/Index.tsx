@@ -138,9 +138,12 @@ const Index = () => {
       <HeroSection 
         title="Delicious, Ready-Made Meals Delivered To Your Door"
         subtitle="Enjoy restaurant-quality, homestyle meals without the hassle. Order online for pickup or delivery."
-        image="/lovable-uploads/2cf690ea-be03-4d26-8a30-a134aff75c0c.png"
+        image="/lovable-uploads/fbcbf740-1230-4215-b522-ac9069689dd6.png"
         imageAlt="Delicious ready-made meals with plates of food on wooden table"
         overlayOpacity="bg-black/70"
+        ctaText="Order Now"
+        ctaLink="/order"
+        hideBottomText={true}
       />
       
       {/* Featured dishes carousel */}
