@@ -24,15 +24,25 @@ const HeroSection = ({
   hideBottomText = false
 }: HeroSectionProps) => {
   return (
-    <section className="relative h-[90vh] w-full overflow-hidden bg-[#3b3224] text-white p-16 text-center">
-      {image && (
-        <img
-          src={image}
-          alt={imageAlt}
-          className="w-full h-full object-cover"
-        />
-      )}
-      <div className={`absolute inset-0 ${image ? overlayOpacity : ''} flex flex-col items-center justify-center text-center ${image ? 'text-white' : 'text-white'} px-4`}>
+    <section className="relative h-screen w-full overflow-hidden text-white text-center">
+      <div className="absolute top-0 left-0 w-full h-full z-10">
+        {image ? (
+          <img
+            src={image}
+            alt={imageAlt}
+            className="w-full h-full object-cover block"
+          />
+        ) : (
+          <img 
+            src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2940&auto=format&fit=crop"
+            alt="Delicious food background"
+            className="w-full h-full object-cover block"
+          />
+        )}
+        <div className="absolute top-0 left-0 w-full h-full bg-[#3b3224]/70 z-20"></div>
+      </div>
+      
+      <div className="relative z-30 p-16 flex flex-col justify-center items-center h-full">
         <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight animate-fade-in">
           {title.includes("<br />") ? (
             <>
@@ -47,14 +57,14 @@ const HeroSection = ({
         </p>
         {ctaText && ctaLink && (
           <Link to={ctaLink}>
-            <Button size="lg" className="bg-[#ef4444] hover:bg-[#dc2626] text-white text-lg animate-fade-in px-6 py-6 shadow-lg">
+            <Button size="lg" className="bg-[#ef4444] hover:bg-[#dc2626] text-white text-lg animate-fade-in px-6 py-6 shadow-lg transition-colors">
               {ctaText}
             </Button>
           </Link>
         )}
         
         {!hideBottomText && (
-          <p className="absolute bottom-6 text-xl font-semibold tracking-wide animate-fade-in">
+          <p className="mt-8 text-xl font-semibold tracking-wide animate-fade-in brand">
             The Little Food Shop
           </p>
         )}
