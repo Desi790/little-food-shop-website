@@ -141,7 +141,7 @@ const Index = () => {
         subtitle="Enjoy restaurant-quality, homestyle meals without the hassle. Order online for pickup or delivery."
         image="/lovable-uploads/f3d3f89f-5bf6-40cf-ac21-e41ff2bc1b53.png"
         imageAlt="Assorted gourmet dishes with plates of food and The Little Food Shop title overlay"
-        overlayOpacity="bg-black/50"
+        overlayOpacity="bg-black/70"
       />
       
       {/* Featured dishes carousel */}
