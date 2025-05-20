@@ -136,14 +136,14 @@ const Index = () => {
   return (
     <Layout>
       <HeroSection 
-        title="Delicious, Ready-Made Meals Delivered To Your Door"
+        title="Delicious, Ready-Made Meals<br />Delivered To Your Door"
         subtitle="Enjoy restaurant-quality, homestyle meals without the hassle. Order online for pickup or delivery."
-        image="/lovable-uploads/fbcbf740-1230-4215-b522-ac9069689dd6.png"
+        image="/lovable-uploads/08286d93-c568-4759-b380-6f966b18e083.png"
         imageAlt="Delicious ready-made meals with plates of food on wooden table"
-        overlayOpacity="bg-black/70"
+        overlayOpacity="bg-black/40"
         ctaText="Order Now"
         ctaLink="/order"
-        hideBottomText={true}
+        hideBottomText={false}
       />
       
       {/* Featured dishes carousel */}
