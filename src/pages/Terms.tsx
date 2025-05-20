@@ -10,6 +10,7 @@ const Terms = () => {
         title="Terms & Conditions" 
         subtitle="Please read these terms carefully before using our services"
         image="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=3270&auto=format&fit=crop"
+        imageAlt="Legal document with terms and conditions"
         ctaText={undefined}
         ctaLink={undefined}
       />

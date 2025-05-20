@@ -69,6 +69,7 @@ const About = () => {
         title="Our Story" 
         subtitle="Founded in 2025, The Little Food Shop brings the comfort of home cooking to your table."
         image="https://images.unsplash.com/photo-1556910103-8b5c952483b7?q=80&w=2940&auto=format&fit=crop"
+        imageAlt="Our restaurant kitchen with chefs preparing food"
       />
       
       {/* Our Mission */}

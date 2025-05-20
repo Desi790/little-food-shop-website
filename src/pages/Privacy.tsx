@@ -10,6 +10,7 @@ const Privacy = () => {
         title="Privacy Policy" 
         subtitle="How we collect, use, and protect your personal information"
         image="https://images.unsplash.com/photo-1576444356160-6c23a3921197?q=80&w=3270&auto=format&fit=crop"
+        imageAlt="Document with privacy policy information"
         ctaText={undefined}
         ctaLink={undefined}
       />

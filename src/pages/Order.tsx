@@ -15,6 +15,7 @@ const Order = () => {
         title="Order Online" 
         subtitle="Fresh, homemade meals ready for pickup or delivery"
         image="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?q=80&w=3270&auto=format&fit=crop"
+        imageAlt="Food delivery service ready for online ordering"
       />
       
       <section className="section-padding">

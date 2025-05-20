@@ -149,6 +149,7 @@ const Menu = () => {
         title="Our Menu" 
         subtitle="Explore our selection of delicious, homemade meals prepared daily by our expert chefs."
         image="https://images.unsplash.com/photo-1466721591366-2d5fba72006d?q=80&w=4221&auto=format&fit=crop"
+        imageAlt="Assortment of delicious food items from our menu"
       />
       
       <section className="py-12 px-4 md:px-6">

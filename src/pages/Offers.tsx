@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/ui/hero-section";
@@ -76,6 +77,7 @@ const Offers = () => {
         title="Special Offers" 
         subtitle="Exclusive deals, promotions, and savings on your favorite meals"
         image="https://images.unsplash.com/photo-1607305387299-a3d9611cd469?q=80&w=3270&auto=format&fit=crop"
+        imageAlt="Special offer promotion banner with discount labels"
       />
       
       {/* Current Promotions */}
