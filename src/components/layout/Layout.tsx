@@ -2,6 +2,7 @@
 import { ReactNode } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import AccessibilityPanel, { AccessibilityProvider } from '@/components/accessibility/AccessibilityPanel';
 
 interface LayoutProps {
   children: ReactNode;
@@ -9,11 +10,15 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <main className="flex-grow">{children}</main>
-      <Footer />
-    </div>
+    <AccessibilityProvider>
+      <div className="flex flex-col min-h-screen">
+        <a href="#main-content" className="skip-link">Skip to main content</a>
+        <Navbar />
+        <main id="main-content" className="flex-grow">{children}</main>
+        <Footer />
+        <AccessibilityPanel />
+      </div>
+    </AccessibilityProvider>
   );
 };
 
