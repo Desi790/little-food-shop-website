@@ -3,6 +3,7 @@ import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/ui/hero-section";
 import SectionHeading from "@/components/ui/section-heading";
 import { Card, CardContent } from "@/components/ui/card";
+import { MapPin, Phone, Mail, Car, Train, Landmark } from "lucide-react";
 
 const Location = () => {
   return (
@@ -13,6 +14,7 @@ const Location = () => {
         image="https://images.unsplash.com/photo-1546195643-70f48f9c5b87?q=80&w=3270&auto=format&fit=crop"
         ctaText={undefined}
         ctaLink={undefined}
+        imageAlt="The exterior of The Little Food Shop restaurant"
       />
       
       <section className="section-padding">
@@ -26,10 +28,15 @@ const Location = () => {
               
               <Card className="mb-6">
                 <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold mb-2">Address</h3>
-                  <p className="text-gray-600">123 Main Street</p>
-                  <p className="text-gray-600">Foodville, CA 94123</p>
-                  <p className="text-gray-600">United States</p>
+                  <div className="flex items-start gap-2 mb-2">
+                    <MapPin className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2">Address</h3>
+                      <p className="text-gray-600">123 Main Street</p>
+                      <p className="text-gray-600">Foodville, CA 94123</p>
+                      <p className="text-gray-600">United States</p>
+                    </div>
+                  </div>
                   
                   <h3 className="text-lg font-semibold mt-6 mb-2">Business Hours</h3>
                   <div className="space-y-1">
@@ -47,37 +54,56 @@ const Location = () => {
                     </div>
                   </div>
                   
-                  <h3 className="text-lg font-semibold mt-6 mb-2">Contact</h3>
-                  <p className="text-gray-600">Phone: (555) 123-4567</p>
-                  <p className="text-gray-600">Email: hello@littlefoodshop.com</p>
+                  <div className="flex items-start gap-2 mt-6 mb-2">
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center">
+                        <Phone className="h-5 w-5 text-primary mr-2" />
+                        <h3 className="text-lg font-semibold">Contact</h3>
+                      </div>
+                      <p className="text-gray-600">Phone: (555) 123-4567</p>
+                      <div className="flex items-center mt-1">
+                        <Mail className="h-5 w-5 text-primary mr-2" />
+                        <p className="text-gray-600">Email: hello@littlefoodshop.com</p>
+                      </div>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
               
               <div className="space-y-4">
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">Parking</h3>
-                  <p className="text-gray-600">
-                    Free parking is available in our dedicated lot behind the building. 
-                    Additional street parking can be found along Main Street and Oak Avenue.
-                  </p>
+                <div className="flex items-start gap-3">
+                  <Car className="h-5 w-5 text-primary mt-1" />
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Parking</h3>
+                    <p className="text-gray-600">
+                      Free parking is available in our dedicated lot behind the building. 
+                      Additional street parking can be found along Main Street and Oak Avenue.
+                    </p>
+                  </div>
                 </div>
                 
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">Public Transportation</h3>
-                  <p className="text-gray-600">
-                    We're a 5-minute walk from the Downtown Station on the Blue Line.
-                    Bus routes 10, 15, and 22 all stop within a block of our location.
-                  </p>
+                <div className="flex items-start gap-3">
+                  <Train className="h-5 w-5 text-primary mt-1" />
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Public Transportation</h3>
+                    <p className="text-gray-600">
+                      We're a 5-minute walk from the Downtown Station on the Blue Line.
+                      Bus routes 10, 15, and 22 all stop within a block of our location.
+                    </p>
+                  </div>
                 </div>
                 
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">Nearby Landmarks</h3>
-                  <ul className="list-disc list-inside text-gray-600">
-                    <li>Across from Central Park</li>
-                    <li>Next to City Library</li>
-                    <li>Two blocks from the Art Museum</li>
-                    <li>Five-minute walk from Downtown Shopping Center</li>
-                  </ul>
+                <div className="flex items-start gap-3">
+                  <Landmark className="h-5 w-5 text-primary mt-1" />
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Nearby Landmarks</h3>
+                    <ul className="list-disc list-inside text-gray-600">
+                      <li>Across from Central Park</li>
+                      <li>Next to City Library</li>
+                      <li>Two blocks from the Art Museum</li>
+                      <li>Five-minute walk from Downtown Shopping Center</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -93,6 +119,7 @@ const Location = () => {
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
                   title="The Little Food Shop location"
+                  aria-label="Google Maps showing The Little Food Shop location"
                 ></iframe>
               </div>
               

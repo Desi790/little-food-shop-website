@@ -1,11 +1,16 @@
 
+import { useEffect, useState } from "react";
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/ui/hero-section";
 import SectionHeading from "@/components/ui/section-heading";
 import FoodCard from "@/components/ui/food-card";
+import FeaturedCarousel, { FeaturedItem } from "@/components/ui/featured-carousel";
+import VideoEmbed from "@/components/ui/video-embed";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { Star } from "lucide-react";
+import { toast } from "sonner";
 import { Link } from "react-router-dom";
 
 // Mock data for featured meals
@@ -36,6 +41,42 @@ const featuredMeals = [
     image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?q=80&w=2787&auto=format&fit=crop",
     category: "Desserts",
     dietary: ["Vegetarian", "Contains Dairy"]
+  }
+];
+
+// Featured dishes for carousel
+const featuredDishes: FeaturedItem[] = [
+  {
+    id: "featured1",
+    name: "Seasonal Vegetable Bowl",
+    description: "A vibrant blend of locally sourced vegetables with our signature dressing.",
+    price: 13.99,
+    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=2940&auto=format&fit=crop",
+    link: "/menu"
+  },
+  {
+    id: "featured2",
+    name: "Artisan Sourdough Bread",
+    description: "Freshly baked sourdough with a crispy crust and soft, tangy interior.",
+    price: 6.99,
+    image: "https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?q=80&w=2787&auto=format&fit=crop",
+    link: "/menu"
+  },
+  {
+    id: "featured3",
+    name: "Wild-caught Salmon Plate",
+    description: "Perfectly cooked salmon with seasonal sides and lemon herb sauce.",
+    price: 18.99,
+    image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=2940&auto=format&fit=crop",
+    link: "/menu"
+  },
+  {
+    id: "featured4",
+    name: "Chocolate Lava Cake",
+    description: "Rich chocolate cake with a molten center, served with vanilla bean ice cream.",
+    price: 7.99,
+    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=2874&auto=format&fit=crop",
+    link: "/menu"
   }
 ];
 
@@ -71,32 +112,80 @@ const Index = () => {
     ));
   };
 
+  // Add smooth scrolling for all internal links
+  useEffect(() => {
+    const internalLinks = document.querySelectorAll('a[href^="#"]');
+    
+    internalLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const targetId = link.getAttribute('href')?.substring(1);
+        if (!targetId) return;
+        
+        const targetElement = document.getElementById(targetId);
+        if (!targetElement) return;
+        
+        window.scrollTo({
+          top: targetElement.offsetTop - 80, // Offset for navbar
+          behavior: 'smooth'
+        });
+      });
+    });
+  }, []);
+
   return (
     <Layout>
       <HeroSection 
         title="Delicious, Ready-Made Meals Delivered To Your Door"
         subtitle="Enjoy restaurant-quality, homestyle meals without the hassle. Order online for pickup or delivery."
         image="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2940&auto=format&fit=crop"
+        imageAlt="Delicious gourmet meal plated beautifully"
       />
       
-      {/* Welcome section */}
-      <section className="section-padding bg-warm-light">
-        <div className="max-w-3xl mx-auto text-center">
-          <SectionHeading 
-            title="Welcome to The Little Food Shop" 
-            center
+      {/* Featured dishes carousel */}
+      <section className="section-padding bg-secondary/30">
+        <div className="max-w-7xl mx-auto">
+          <FeaturedCarousel 
+            items={featuredDishes}
+            title="This Week's Featured Dishes"
           />
-          <p className="text-lg mb-6">
-            Established in 2025, we're passionate about creating delicious, ready-made meals that taste just like home cooking. 
-            Our skilled chefs use only the finest ingredients to prepare meals that are convenient without compromising on quality or flavor.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/about">
-              <Button variant="outline" size="lg">Our Story</Button>
-            </Link>
+          <div className="text-center mt-6">
             <Link to="/menu">
-              <Button className="bg-primary hover:bg-primary/90" size="lg">Browse Our Menu</Button>
+              <Button size="lg" className="bg-primary hover:bg-primary/90">View All Dishes</Button>
             </Link>
+          </div>
+        </div>
+      </section>
+      
+      {/* Welcome section */}
+      <section className="section-padding bg-warm-light" id="about">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <SectionHeading 
+                title="Welcome to The Little Food Shop" 
+              />
+              <p className="text-lg mb-6">
+                Established in 2025, we're passionate about creating delicious, ready-made meals that taste just like home cooking. 
+                Our skilled chefs use only the finest ingredients to prepare meals that are convenient without compromising on quality or flavor.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link to="/about">
+                  <Button variant="outline" size="lg">Our Story</Button>
+                </Link>
+                <Link to="/menu">
+                  <Button className="bg-primary hover:bg-primary/90" size="lg">Browse Our Menu</Button>
+                </Link>
+              </div>
+            </div>
+            
+            <div className="rounded-lg overflow-hidden shadow-md">
+              <VideoEmbed
+                videoId="dQw4w9WgXcQ"
+                title="How We Make Our Signature Dishes"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -105,7 +194,7 @@ const Index = () => {
       <section className="section-padding">
         <div className="max-w-7xl mx-auto">
           <SectionHeading 
-            title="Featured Meals" 
+            title="Popular Meals" 
             subtitle="Our most popular dishes, loved by customers"
             center
           />
@@ -173,6 +262,18 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Newsletter section */}
+      <section className="section-padding bg-warm-light">
+        <div className="max-w-3xl mx-auto text-center">
+          <SectionHeading 
+            title="Stay Updated" 
+            subtitle="Subscribe to our newsletter for special offers and new menu items"
+            center
+          />
+          <NewsletterForm />
+        </div>
+      </section>
+
       {/* CTA section */}
       <section className="relative bg-cover bg-center h-[300px]" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2940&auto=format&fit=crop')" }}>
         <div className="absolute inset-0 bg-black/50"></div>
@@ -186,6 +287,51 @@ const Index = () => {
         </div>
       </section>
     </Layout>
+  );
+};
+
+// Newsletter component
+const NewsletterForm = () => {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    
+    setIsSubmitting(true);
+    
+    // Simulate submission
+    setTimeout(() => {
+      toast.success("Thank you for subscribing to our newsletter!");
+      setEmail("");
+      setIsSubmitting(false);
+    }, 1000);
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="mt-6 max-w-md mx-auto">
+      <div className="flex flex-col sm:flex-row gap-3">
+        <Input
+          type="email"
+          placeholder="Your email address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          className="flex-grow"
+        />
+        <Button 
+          type="submit" 
+          className="bg-primary hover:bg-primary/90 whitespace-nowrap"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Subscribing..." : "Subscribe"}
+        </Button>
+      </div>
+      <p className="text-xs text-gray-500 mt-2">
+        We respect your privacy. Unsubscribe at any time.
+      </p>
+    </form>
   );
 };
 

@@ -53,12 +53,20 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground font-montserrat;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-playfair;
+  }
+
+  img {
+    @apply max-w-full h-auto;
   }
 }
 
@@ -86,4 +94,27 @@
   .food-card-content {
     @apply p-4;
   }
+
+  .animate-fade-in {
+    @apply opacity-0 translate-y-4;
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Add animation delay for staggered animations */
+.animate-fade-in:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.animate-fade-in:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.animate-fade-in:nth-child(3) {
+  animation-delay: 0.5s;
 }
