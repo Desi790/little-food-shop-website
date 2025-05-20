@@ -30,8 +30,10 @@ const HeroSection = ({
     >
       <div className={`absolute inset-0 ${overlayOpacity}`}></div>
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-        <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 max-w-3xl animate-fade-in drop-shadow-lg">{title}</h1>
-        <p className="text-lg md:text-xl text-white mb-8 max-w-2xl animate-fade-in drop-shadow-md">{subtitle}</p>
+        <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 max-w-3xl animate-fade-in drop-shadow-lg" 
+           style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}>{title}</h1>
+        <p className="text-lg md:text-xl text-white mb-8 max-w-2xl animate-fade-in drop-shadow-md"
+           style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.8)" }}>{subtitle}</p>
         {ctaText && ctaLink && (
           <Link to={ctaLink}>
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-lg animate-fade-in">
