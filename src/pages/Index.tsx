@@ -139,8 +139,9 @@ const Index = () => {
       <HeroSection 
         title="Delicious, Ready-Made Meals Delivered To Your Door"
         subtitle="Enjoy restaurant-quality, homestyle meals without the hassle. Order online for pickup or delivery."
-        image="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2940&auto=format&fit=crop"
-        imageAlt="Delicious gourmet meal plated beautifully"
+        image="/lovable-uploads/0301c2ce-3b17-4a6e-94a6-44544a202d0c.png"
+        imageAlt="Assortment of gourmet dishes including meat, vegetables and sides on rustic plates"
+        overlayOpacity="bg-black/20"
       />
       
       {/* Featured dishes carousel */}
