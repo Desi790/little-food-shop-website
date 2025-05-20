@@ -24,7 +24,7 @@ const HeroSection = ({
   hideBottomText = false
 }: HeroSectionProps) => {
   return (
-    <section className="relative h-[90vh] w-full overflow-hidden bg-primary/10">
+    <section className="relative h-[90vh] w-full overflow-hidden bg-[#3b3224] text-white p-16 text-center">
       {image && (
         <img
           src={image}
@@ -32,7 +32,7 @@ const HeroSection = ({
           className="w-full h-full object-cover"
         />
       )}
-      <div className={`absolute inset-0 ${image ? overlayOpacity : ''} flex flex-col items-center justify-center text-center ${image ? 'text-white' : 'text-gray-800'} px-4`}>
+      <div className={`absolute inset-0 ${image ? overlayOpacity : ''} flex flex-col items-center justify-center text-center ${image ? 'text-white' : 'text-white'} px-4`}>
         <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight animate-fade-in">
           {title.includes("<br />") ? (
             <>
@@ -42,12 +42,12 @@ const HeroSection = ({
             title
           )}
         </h1>
-        <p className="text-lg md:text-xl mb-6 max-w-xl animate-fade-in">
+        <p className="text-lg md:text-xl mb-6 max-w-xl mx-auto animate-fade-in">
           {subtitle}
         </p>
         {ctaText && ctaLink && (
           <Link to={ctaLink}>
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-lg animate-fade-in px-6 py-6 shadow-lg">
+            <Button size="lg" className="bg-[#ef4444] hover:bg-[#dc2626] text-white text-lg animate-fade-in px-6 py-6 shadow-lg">
               {ctaText}
             </Button>
           </Link>
